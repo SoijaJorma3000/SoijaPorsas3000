@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>self.image_speed = 0.125;
+self.movespeed = 0.2;
 </string>
           </argument>
         </arguments>
@@ -53,20 +54,24 @@ var newY = y
 
 if (keyboard_check(vk_up))
 {
-    newY = y - 1;
+    newY = y - self.movespeed;
 }
 if (keyboard_check(vk_down))
 {
-    newY = y + 1;
+    newY = y + self.movespeed;
 }
 if (keyboard_check(vk_left))
 {
-    newX = x - 1;
+    newX = x - self.movespeed;
 }
 if (keyboard_check(vk_right))
 {
-    newX = x + 1;
+    newX = x + self.movespeed;
 }
+
+var len = point_distance(newX,newY,x,y)
+newX = newX + (newX - x) / len;
+newY = newY + (newY - y) / len;
 
 var angle = point_direction(x,y,newX,newY);
 
@@ -93,12 +98,6 @@ else
         y = newY;
     }
 }
-/*
-else
-{
-    speed = 0;
-}
-*/
 
 if(mouse_x &lt; newX)
 {
@@ -143,7 +142,7 @@ if(global.player1.attackweapon.cooldownLeft &gt; 0)
             var animspeed = 110 / self.animLength;
             
             image_angle = point_direction(x,y,mouse_x,mouse_y) - 110/2 + animspeed * self.animLeft;
-            var len = sqrt(sqr(mouse_x - x) + sqr(mouse_y - y))
+//          var len = point_distance(mouse_x,mouse_y,x,y) // sqrt(sqr(mouse_x - x) + sqr(mouse_y - y))
 //          x = x + 32 * (mouse_x - x) / len
 //          y = y + 32 * (mouse_y - y) / len
             x = x + 32 * dsin(image_angle + 90);

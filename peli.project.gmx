@@ -14,10 +14,14 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\collisionline.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\Player</object>
     <object>objects\wall</object>
     <object>objects\weapon</object>
+    <object>objects\enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

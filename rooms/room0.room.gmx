@@ -73,6 +73,7 @@ global.player1.attackweapon = instance_create(x, y, weapon)</code>
     <instance objName="wall" x="960" y="736" name="inst_419E13C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="0" y="704" name="inst_B5E253E5" locked="0" code="" scaleX="1" scaleY="-18" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="0" y="704" name="inst_08F639CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="enemy" x="896" y="64" name="inst_820C7759" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
