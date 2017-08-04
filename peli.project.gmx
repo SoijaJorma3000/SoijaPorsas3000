@@ -10,6 +10,7 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\miekka</sprite>
     <sprite>sprites\ukkeli</sprite>
+    <sprite>sprites\ukkeli_alas</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
