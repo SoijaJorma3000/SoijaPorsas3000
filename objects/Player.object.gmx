@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.image_speed = 0.25;
+            <string>self.image_speed = 0.125;
 </string>
           </argument>
         </arguments>
@@ -68,10 +68,30 @@ if (keyboard_check(vk_right))
     newX = x + 1;
 }
 
-if(place_free(newX, newY))
+var angle = point_direction(x,y,newX,newY);
+
+if(225 &lt;= angle &amp;&amp; angle &lt;= 315)
 {
-    x = newX;
-    y = newY;
+    sprite_index = ukkeli_alas;
+}
+else
+{
+    sprite_index = ukkeli;
+}
+
+if(newX == x &amp;&amp; newY == y)
+{
+    image_speed = 0;
+}
+else
+{
+    image_speed = 0.125;
+
+    if(place_free(newX, newY))
+    {
+        x = newX;
+        y = newY;
+    }
 }
 /*
 else
